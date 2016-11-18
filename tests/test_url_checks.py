@@ -1,4 +1,3 @@
-import os
 import pytest
 import requests
 from ticket_helper import format_results
@@ -16,22 +15,19 @@ def ticket_update(ticket_num, name_test, status):
 
 
 @pytest.mark.nondestructive
-def test_status_check(variables, request):
+def test_status_check(ticket_num, variables, request):
     name_test = request.node.name
     status = api_response(variables, 'status').json()
     assert('OK' == status['status'])
     assert(variables['VERSION'] == status['version'])
-    ticket_num = os.environ['TICKET_NUM']
     if ticket_num:
         ticket_update(ticket_num, name_test, status)
 
 
 @pytest.mark.nondestructive
-def test_health_check(variables):
-
-    r = api_response(variables, 'health')
-    status = r.json()
-    print(status)
+def test_health_check(ticket_num, variables, request):
+    name_test = request.node.name
+    status = api_response(variables, 'health').json()
     ROUTER = variables['ROUTER']
     STORAGE = variables['STORAGE']
 
@@ -40,3 +36,5 @@ def test_health_check(variables):
     assert('OK' == status[STORAGE]['status'])
     assert('OK' == status['status'])
     assert(variables['VERSION'] == status['version'])
+    if ticket_num:
+        ticket_update(ticket_num, name_test, status)
