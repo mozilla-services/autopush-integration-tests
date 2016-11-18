@@ -1,0 +1,7 @@
+{
+  "VERSION": "1.18.0",
+  "HOST": "autopush.dev.mozaws.net",
+  "HOST_UPDATES": "updates-autopush.dev.mozaws.net",
+  "ROUTER": "dev.autopush.routerv2",
+  "STORAGE": "dev.autopush.storage"
+}

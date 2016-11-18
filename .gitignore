@@ -1,0 +1,10 @@
+.cache
+*.sw[op]
+*.pyc
+*.komodoproject
+*.idea
+.tox
+__pycache__
+results/
+venv/
+.DS_store
