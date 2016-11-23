@@ -4,13 +4,16 @@ import requests
 from ticket_helper import format_results
 
 
+TICKET_NUM = os.environ['TICKET_NUM']
+
+
 def api_response(variables, path):
     URL = 'https://{0}/{1}'.format(variables['HOST_UPDATES'], path)
     return requests.get(URL)
 
 
-def ticket_update(ticket_num, name_test, status):
-    print('UPDATING TICKET #{0}'.format(ticket_num))
+def ticket_update(name_test, status):
+    # print('UPDATING TICKET #{0}'.format(TICKET_NUM))
     comments = format_results(name_test, status)
     print(comments)
 
@@ -21,17 +24,15 @@ def test_status_check(variables, request):
     status = api_response(variables, 'status').json()
     assert('OK' == status['status'])
     assert(variables['VERSION'] == status['version'])
-    ticket_num = os.environ['TICKET_NUM']
-    if ticket_num:
-        ticket_update(ticket_num, name_test, status)
+    if TICKET_NUM:
+        ticket_update(name_test, status)
 
 
 @pytest.mark.nondestructive
-def test_health_check(variables):
-
+def test_health_check(variables, request):
+    name_test = request.node.name
     r = api_response(variables, 'health')
     status = r.json()
-    print(status)
     ROUTER = variables['ROUTER']
     STORAGE = variables['STORAGE']
 
@@ -40,3 +41,5 @@ def test_health_check(variables):
     assert('OK' == status[STORAGE]['status'])
     assert('OK' == status['status'])
     assert(variables['VERSION'] == status['version'])
+    if TICKET_NUM:
+        ticket_update(name_test, status)
