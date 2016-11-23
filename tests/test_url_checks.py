@@ -1,4 +1,3 @@
-import os
 import pytest
 import requests
 from ticket_helper import format_results
@@ -13,13 +12,12 @@ def api_response(variables, path):
 
 
 def ticket_update(name_test, status):
-    # print('UPDATING TICKET #{0}'.format(TICKET_NUM))
     comments = format_results(name_test, status)
     print(comments)
 
 
 @pytest.mark.nondestructive
-def test_status_check(variables, request):
+def test_status_check(ticket_num, variables, request):
     name_test = request.node.name
     status = api_response(variables, 'status').json()
     assert('OK' == status['status'])
