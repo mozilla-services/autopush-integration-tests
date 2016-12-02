@@ -12,6 +12,6 @@ while true; do
     echo
     echo
     aplt_testplan wss://$HOST/ "aplt.scenarios:basic,3,1,0,5"
-    sleep 10 
+    sleep 10
     let counter+=1
 done

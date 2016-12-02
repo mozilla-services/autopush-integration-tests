@@ -3,12 +3,12 @@
 
 PWD=`pwd`
 
-# PROD 
+# PROD
 HOST="push.services.mozilla.com"
 HOST_UPDATES="updates.push.services.mozilla.com"
 TEST_ENV="PROD"
 
-# STAGE 
+# STAGE
 HOST="autopush.stage.mozaws.net"
 HOST_UPDATES="updates-autopush.stage.mozaws.net"
 TEST_ENV="STAGE"
