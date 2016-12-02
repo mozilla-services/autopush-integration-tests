@@ -4,6 +4,15 @@ import json
 LINE = '----------------------------'
 
 
+def ticket_update(name_test, ticket_num, status):
+    comments = format_results(name_test, status)
+    if ticket_num:
+        print('TBD: update ticket here')
+    else:
+        print('no TICKET_NUM indicated. printing results to stdout.')
+        print(comments)
+
+
 def format_results(name_test, results, bugzilla=True):
     name_test = name_test.upper()
     name_test = name_test.replace('TEST_', '')

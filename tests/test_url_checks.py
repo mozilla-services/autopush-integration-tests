@@ -1,20 +1,7 @@
 import os
 import pytest
 import requests
-from ticket_helper import format_results
-
-
-# TODO: add conditional to check for:
-# a) env var
-# b) an input var
-# c) nuthin
-
-TICKET_NUM = None
-
-try:
-    TICKET_NUM = os.environ['TICKET_NUM']
-except KeyError:
-    print('no TICKET_NUM indicated. printing results to stdout.')
+from ticket_helper import format_results, ticket_update
 
 
 def api_response(variables, path):
@@ -22,23 +9,17 @@ def api_response(variables, path):
     return requests.get(URL)
 
 
-def ticket_update(name_test, status):
-    comments = format_results(name_test, status)
-    print(comments)
-
-
 @pytest.mark.nondestructive
-def test_status_check(variables, request):
+def test_status_check(variables, ticket_num, request):
     name_test = request.node.name
     status = api_response(variables, 'status').json()
     assert('OK' == status['status'])
     assert(variables['VERSION'] == status['version'])
-    if TICKET_NUM:
-        ticket_update(name_test, status)
+    ticket_update(name_test, ticket_num, status)
 
 
 @pytest.mark.nondestructive
-def test_health_check(variables, request):
+def test_health_check(variables, ticket_num, request):
     name_test = request.node.name
     r = api_response(variables, 'health')
     status = r.json()
@@ -50,5 +31,4 @@ def test_health_check(variables, request):
     assert('OK' == status[STORAGE]['status'])
     assert('OK' == status['status'])
     assert(variables['VERSION'] == status['version'])
-    if TICKET_NUM:
-        ticket_update(name_test, status)
+    ticket_update(name_test, ticket_num, status)

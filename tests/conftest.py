@@ -19,5 +19,5 @@ def pytest_addoption(parser):
     parser.addoption(
         '--ticket-num',
         metavar='ticket',
-        default=not os.getenv('TICKET_NUM', None),
+        default=os.getenv('TICKET_NUM', None),
         help='Ticket number the tests should use')
