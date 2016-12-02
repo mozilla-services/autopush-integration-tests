@@ -1,5 +1,5 @@
 {
-  "VERSION": "1.21.2",
+  "VERSION": "1.22.0",
   "HOST": "autopush.stage.mozaws.net",
   "HOST_UPDATES": "updates-autopush.stage.mozaws.net",
   "ROUTER": "stage.autopush.routerv2",
