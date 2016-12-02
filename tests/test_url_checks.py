@@ -1,10 +1,20 @@
+import os
 import pytest
 import requests
 from ticket_helper import format_results
 
 
-TICKET_NUM = os.environ['TICKET_NUM']
+# TODO: add conditional to check for:
+# a) env var
+# b) an input var
+# c) nuthin
 
+TICKET_NUM = None
+
+try:
+    TICKET_NUM = os.environ['TICKET_NUM']
+except KeyError:
+    print('no TICKET_NUM indicated. printing results to stdout.')
 
 def api_response(variables, path):
     URL = 'https://{0}/{1}'.format(variables['HOST_UPDATES'], path)
@@ -17,7 +27,7 @@ def ticket_update(name_test, status):
 
 
 @pytest.mark.nondestructive
-def test_status_check(ticket_num, variables, request):
+def test_status_check(variables, request):
     name_test = request.node.name
     status = api_response(variables, 'status').json()
     assert('OK' == status['status'])
