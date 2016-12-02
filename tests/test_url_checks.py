@@ -16,6 +16,7 @@ try:
 except KeyError:
     print('no TICKET_NUM indicated. printing results to stdout.')
 
+
 def api_response(variables, path):
     URL = 'https://{0}/{1}'.format(variables['HOST_UPDATES'], path)
     return requests.get(URL)

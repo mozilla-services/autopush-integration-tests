@@ -1,4 +1,3 @@
-import pytest
 import requests
 
 
@@ -16,10 +15,9 @@ class DemoTest:
         print(host)
         assert func(3) == 4
 
-
     def test_status(self, variables):
         URL = 'https://{0}/status'.format(HOST_UPDATES)
         r = requests.get(URL)
         status = r.json()
         print(status)
-        #assert(status['status'] == 'OK')
+        # assert(status['status'] == 'OK')
