@@ -1,6 +1,7 @@
 #!/bin/bash
 
 clear
+
 source ./venv/bin/activate
 TOPIC=sometopic
 TTL=360
