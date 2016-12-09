@@ -2,8 +2,10 @@
 
 source config.sh
 
-counter=0
-while true; do
+RUN_ONCE=$1
+
+
+function run_scenario() {
     echo
     echo
     echo "------------------------"
@@ -12,6 +14,16 @@ while true; do
     echo
     echo
     aplt_testplan wss://$HOST/ "aplt.scenarios:basic,3,1,0,5"
-    sleep 10 
-    let counter+=1
-done
+    echo
+}
+
+counter=0
+if [[ -z $RUN_ONCE ]]; then 
+    while true; do
+	run_scenario
+	sleep 10 
+	let counter+=1
+    done
+else
+    run_scenario
+fi
