@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+clear
+pytest --variables ./stage.json --ticket_num=1154752 ./test_url_checks.py

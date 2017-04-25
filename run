@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+clear
+./venv/bin/pytest --variables ./tests/stage.json --ticket_num=1154752 ./tests/test_url_checks.py
