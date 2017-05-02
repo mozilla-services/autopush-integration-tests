@@ -2,5 +2,4 @@ pytest
 pytest-variables
 pytest-xdist
 requests
-flake8
 tox

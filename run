@@ -2,4 +2,7 @@
 
 
 clear
-./venv/bin/pytest --variables ./tests/stage.json --ticket_num=1154752 ./tests/test_url_checks.py
+#./venv/bin/pytest --variables ./tests/stage.json --ticket_num=1154752 ./tests/test_url_checks.py
+#tox test_url_checks
+#tox test_status_check
+#tox test_health_check

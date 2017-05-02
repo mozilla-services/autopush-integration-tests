@@ -1,5 +1,5 @@
 {
-  "VERSION": "1.18.0",
+  "VERSION": "1.28.0",
   "HOST": "push.services.mozilla.com",
   "HOST_UPDATES": "updates.push.services.mozilla.com",
   "ROUTER": "prod.autopush.routerv2",

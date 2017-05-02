@@ -13,7 +13,7 @@ function run_scenario() {
     echo "------------------------"
     echo
     echo
-    aplt_testplan wss://$HOST/ "aplt.scenarios:basic,3,1,0,5"
+    aplt_testplan wss://$HOST/ "aplt.scenarios:basic,3,1,0"
     echo
 }
 

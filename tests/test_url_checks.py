@@ -1,6 +1,6 @@
 import pytest
 import requests
-from ticket_helper import format_results
+from tests.ticket_helper import format_results
 
 
 def api_response(variables, path):
