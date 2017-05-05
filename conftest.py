@@ -3,9 +3,21 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import os
-
 import pytest
+from tests.release_notes import ReleaseNotes
 
+
+@pytest.fixture(scope="function", autouse=True)
+def github_release_tag(request, variables):
+    #repo_owner = variables['REPO_OWNER'] 
+    #application = variables['APPLICATION']
+    #environment = variables['ENVIRONMENT'] 
+    notes = ReleaseNotes(
+        variables['REPO_OWNER'],
+        variables['APPLICATION'],
+        variables['ENVIRONMENT']
+    )
+    request.function.func_globals['release_num'] = notes.last_tag
 
 @pytest.fixture(scope='session')
 def ticket_num(request):

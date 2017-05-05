@@ -1,6 +1,7 @@
 import pytest
 import requests
 from tests.ticket_helper import format_results
+#from tests.release_notes import ReleaseNotes
 
 
 def api_response(variables, path):
@@ -19,7 +20,7 @@ def test_status_check(ticket_num, variables, request):
     name_test = request.node.name
     status = api_response(variables, 'status').json()
     assert('OK' == status['status'])
-    assert(variables['VERSION'] == status['version'])
+    assert(release_num == status['version'])
     if ticket_num:
         ticket_update(ticket_num, name_test, status)
 
@@ -35,6 +36,6 @@ def test_health_check(ticket_num, variables, request):
     assert('OK' == status[ROUTER]['status'])
     assert('OK' == status[STORAGE]['status'])
     assert('OK' == status['status'])
-    assert(variables['VERSION'] == status['version'])
+    assert(release_num == status['version'])
     if ticket_num:
         ticket_update(ticket_num, name_test, status)

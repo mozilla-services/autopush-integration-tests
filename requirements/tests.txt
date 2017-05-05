@@ -2,4 +2,5 @@ pytest
 pytest-variables
 pytest-xdist
 requests
+six
 tox
