@@ -24,14 +24,14 @@ class UrlChecker(object):
 
         import requests
         out = ''
- 
+
         try:
             response = requests.get(url, timeout=REQUEST_TIMEOUT)
-            response_time = requests.get(url).elapsed.total_seconds() 
+            response_time = requests.get(url).elapsed.total_seconds()
             if response.history:
                 out += "Request was redirected!\n"
                 for resp in response.history:
-                    print( resp.status_code, resp.url)
+                    print(resp.status_code, resp.url)
                 out += 'status code: {0} --> destination: {1}\n'.format(
                     response.status_code, response.url)
             else:
@@ -82,17 +82,3 @@ class UrlChecker(object):
         out += self.verify_urls(urls)
 
         return out
-
-if __name__ == '__main__':
-
-    # example
-    application = 'loop-server'
-    ec2 = EC2Handler()
-
-    checker = UrlChecker(
-        self, application, env_selected, host_string, 
-        instance_properties, test_manifest
-    )
-
-    print('================')
-    checker.main()

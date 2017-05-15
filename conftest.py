@@ -6,24 +6,25 @@ import os
 import pytest
 from tests.release_notes import ReleaseNotes
 
+import globals as gbl
 
-@pytest.fixture(scope="function", autouse=True)
+
+@pytest.fixture(scope="session", autouse=True)
 def github_release_tag(request, variables):
-    #repo_owner = variables['REPO_OWNER'] 
-    #application = variables['APPLICATION']
-    #environment = variables['ENVIRONMENT'] 
     notes = ReleaseNotes(
         variables['REPO_OWNER'],
         variables['APPLICATION'],
         variables['ENVIRONMENT']
     )
-    request.function.func_globals['release_num'] = notes.last_tag
+    gbl.release_num = notes.last_tag
+
 
 @pytest.fixture(scope='session')
-def ticket_num(request):
+def ticket_num():
     """Returns the ticket number"""
-    config = request.config
-    return config.getoption('ticket_num')
+    #config = request.config
+    #return config.getoption('ticket_num')
+    gbl.ticket_num = '12345668'  
 
 
 def pytest_addoption(parser):
