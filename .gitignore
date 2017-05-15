@@ -4,6 +4,7 @@
 *.komodoproject
 *.idea
 .tox
+.env
 __pycache__
 results/
 venv/
