@@ -1,0 +1,5 @@
+{
+  "APPLICATION": "autopush",
+  "REPO_OWNER": "mozilla-services",
+  "ENVIRONMENT": "STAGE"
+}
