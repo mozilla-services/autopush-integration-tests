@@ -12,7 +12,7 @@ import sys
 import itertools
 import requests
 from six.moves import range
-from output_helper import OutputHelper
+from tests.output_helper import OutputHelper
 
 
 HOST_GITHUB = 'github.com'
