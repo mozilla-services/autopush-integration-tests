@@ -1,6 +1,7 @@
-pytest
-pytest-variables
-pytest-xdist
-requests
+pytest==3.0.7
+pytest-variables==1.6.1
+pytest-xdist==1.16.0
+requests==2.14.2
+flake8==3.3.0
 six
 tox
