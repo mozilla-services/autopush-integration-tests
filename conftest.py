@@ -1,7 +1,3 @@
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this
-# file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
 import os
 import pytest
 from tests.release_notes import ReleaseNotes
@@ -22,9 +18,9 @@ def github_release_tag(request, variables):
 @pytest.fixture(scope='session')
 def ticket_num():
     """Returns the ticket number"""
-    #config = request.config
-    #return config.getoption('ticket_num')
-    gbl.ticket_num = '12345668'  
+    # config = request.config
+    # return config.getoption('ticket_num')
+    gbl.ticket_num = '12345668'
 
 
 def pytest_addoption(parser):

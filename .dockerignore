@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+.git
+.tox
+.travis.yaml
+*.pyc
+*.swp
+__pycache__
+scripts
+test_env.conf
+Jenkinsfile
+Makefile

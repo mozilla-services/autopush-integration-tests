@@ -4,14 +4,14 @@
 PWD=`pwd`
 
 # PROD 
-HOST="push.services.mozilla.com"
-HOST_UPDATES="updates.push.services.mozilla.com"
-TEST_ENV="PROD"
+#HOST="push.services.mozilla.com"
+#HOST_UPDATES="updates.push.services.mozilla.com"
+#TEST_ENV="PROD"
 
 # STAGE 
-#HOST="autopush.stage.mozaws.net"
-#HOST_UPDATES="updates-autopush.stage.mozaws.net"
-#TEST_ENV="STAGE"
+HOST="autopush.stage.mozaws.net"
+HOST_UPDATES="updates-autopush.stage.mozaws.net"
+TEST_ENV="STAGE"
 
 # DEV 
 #HOST="autopush.dev.mozaws.net"
