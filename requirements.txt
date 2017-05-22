@@ -1,5 +1,5 @@
 pytest==3.0.7
-pytest-variables
+pytest-variables==1.6.1
 pytest-xdist
 requests
 flake8
