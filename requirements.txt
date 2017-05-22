@@ -1,5 +1,5 @@
 pytest
 pytest-variables
 pytest-xdist
-requests
+requests==2.14.2
 flake8
