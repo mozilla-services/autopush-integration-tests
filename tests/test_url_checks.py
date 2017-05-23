@@ -1,7 +1,21 @@
 import pytest
 import requests
 from tests.ticket_helper import format_results
+from tests.release_notes import ReleaseNotes
 import globals as gbl
+
+
+@pytest.fixture(scope="module", autouse=True)
+def github_release_tag(request, variables):
+
+    if not gbl.release_num:
+        notes = ReleaseNotes(
+            variables['REPO_OWNER'],
+            variables['APPLICATION'],
+            variables['ENVIRONMENT']
+        )
+        gbl.release_num = notes.last_tag
+    return gbl.release_num
 
 
 def api_response(variables, path):
@@ -19,8 +33,10 @@ def ticket_update(name_test, status):
 def test_status_check(variables, request):
     name_test = request.node.name
     status = api_response(variables, 'status').json()
+
+    release_num = github_release_tag(request, variables)
     assert('OK' == status['status'])
-    assert(gbl.release_num == status['version'])
+    assert(release_num == status['version'])
     if gbl.ticket_num:
         ticket_update(gbl.ticket_num, name_test, status)
 
@@ -31,11 +47,12 @@ def test_health_check(variables, request):
     status = api_response(variables, 'health').json()
     ROUTER = variables['ROUTER']
     STORAGE = variables['STORAGE']
+    release_num = github_release_tag(request, variables)
 
     assert(0 == status['clients'])
     assert('OK' == status[ROUTER]['status'])
     assert('OK' == status[STORAGE]['status'])
     assert('OK' == status['status'])
-    assert(gbl.release_num == status['version'])
+    assert(release_num == status['version'])
     if gbl.ticket_num:
         ticket_update(gbl.ticket_num, name_test, status)

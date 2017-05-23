@@ -1,18 +1,12 @@
 import os
 import pytest
-from tests.release_notes import ReleaseNotes
 
 import globals as gbl
 
 
-@pytest.fixture(scope="session", autouse=True)
-def github_release_tag(request, variables):
-    notes = ReleaseNotes(
-        variables['REPO_OWNER'],
-        variables['APPLICATION'],
-        variables['ENVIRONMENT']
-    )
-    gbl.release_num = notes.last_tag
+@pytest.fixture(scope='session')
+def rel_num():
+    gbl.release_num = ''
 
 
 @pytest.fixture(scope='session')
