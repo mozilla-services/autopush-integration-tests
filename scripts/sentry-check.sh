@@ -1,8 +1,8 @@
 source ./config.sh
 
-echo "--------------------------------"
+echo $LINE
 echo "SENTRY TEST"
-echo "--------------------------------"
+echo $LINE
 echo
 CMD="dig +short myip.opendns.com @resolver1.opendns.com"
 IP=`$CMD`

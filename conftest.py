@@ -1,26 +1,45 @@
 import os
 import pytest
+from outlawg import Outlawg
+import requests
 
-import globals as gbl
+
+GITHUB_ORG = 'mozilla-services'
+GITHUB_REPO = 'autopush'
+PROJECT_SLUG = 'autopush-stage'
+ISSUE_TITLE = 'LogCheckError: LogCheck'
+SENTRY_TOKEN = os.environ['SENTRY_TOKEN']
+HOST_SENTRY = os.environ['HOST_SENTRY']
+
+
+log = Outlawg()
+
+
+class NotFoundError(Exception):
+    def __init__(self, url):
+        err_header = self.output.get_header('ERROR')
+        err_msg = '{0}\nNothing found at: \n{1}\nABORTING!\n\n'.format(err_header, url)  # noqa
+        Exception.__init__(err_msg)
+
+
+def get_tags(url):
+    """Get all tags as json from Github API."""
+
+    req = requests.get(url)
+    try:
+        if 'Not Found' in req.text:
+            raise NotFoundError(url)
+    except NotFoundError():
+        pass
+    else:
+        return req
 
 
 @pytest.fixture(scope='session')
-def rel_num():
-    gbl.release_num = ''
-
-
-@pytest.fixture(scope='session')
-def ticket_num():
-    """Returns the ticket number"""
-    # config = request.config
-    # return config.getoption('ticket_num')
-    gbl.ticket_num = '12345668'
-
-
-def pytest_addoption(parser):
-    parser.addini('ticket_num', help='Ticket number')
-    parser.addoption(
-        '--ticket-num',
-        metavar='ticket',
-        default=os.getenv('TICKET_NUM', None),
-        help='Ticket number the tests should use')
+def release_version():
+    # print('Call github API for release tag')
+    log.header('GITHUB API')
+    print('get release tag')
+    url = 'https://api.github.com/repos/{0}/{1}/releases/latest'.format(GITHUB_ORG, GITHUB_REPO)  # noqa
+    req = get_tags(url)
+    return req.json()['tag_name']

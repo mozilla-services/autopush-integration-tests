@@ -1,5 +1,7 @@
 source config.sh
 
+
+SLEEP_TIME=5
 URL_STATUS="https://$HOST_UPDATES/status"
 clear; 
 JSON=`curl -s "$URL_STATUS"`
@@ -9,7 +11,7 @@ say -v "Daniel" $VERS_OLD
 while :; do 
    clear; 
    JSON=`curl -s "$URL_STATUS"`
-   VERS=`echo $JSON | /usr/local/bin/jq '.version' ; sleep 5;` 
+   VERS=`echo $JSON | /usr/local/bin/jq '.version' ; sleep $SLEEP_TIME;` 
    if [ "$VERS_OLD" == "$VERS" ]; then
       MSG="still same version: $VERS"
       FLAG=0

@@ -1,3 +1,4 @@
+.DS_store
 .cache
 *.sw[op]
 *.pyc
@@ -8,5 +9,9 @@
 __pycache__
 results/
 venv/
-.DS_store
+.Python
+bin/
+include/
+lib/
+pip-selfcheck.json
 ~tmp

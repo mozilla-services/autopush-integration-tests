@@ -1,8 +1,8 @@
 source config.sh
 
-echo "----------------------------"
+echo $LINE
 echo "URL CHECKS ($TEST_ENV)"
-echo "----------------------------"
+echo $LINE
 echo
 while :; do
     CMD="curl -s 'https://$HOST_UPDATES/health' | python -mjson.tool"

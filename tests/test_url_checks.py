@@ -1,6 +1,6 @@
 import pytest
 import requests
-from tests.ticket_helper import format_results
+from tests.ticket import format_results
 from tests.release_notes import ReleaseNotes
 import globals as gbl
 

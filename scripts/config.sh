@@ -2,6 +2,7 @@
 
 
 PWD=`pwd`
+LINE="-----------------------------------------------"
 
 # PROD 
 #HOST="push.services.mozilla.com"
@@ -23,7 +24,7 @@ RUN_ONCE=1 # True
 ATTACK_INSTANCES=1
 
 # ACTIVATE ap-loadtester VIRTUALENV
-PATH_AP_LOADTESTER=~/git/ap-loadtester
+PATH_AP_LOADTESTER=~/git/autopush-loadtester
 
 cd $PATH_AP_LOADTESTER
 source apenv/bin/activate
