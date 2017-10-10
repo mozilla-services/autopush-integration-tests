@@ -50,7 +50,7 @@ def env(request):
 
 
 @pytest.fixture()
-def apiversion(request):
+def api_version(request):
     return request.config.getoption("--api-version")
 
 

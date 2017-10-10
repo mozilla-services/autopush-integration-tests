@@ -1,7 +1,7 @@
 import requests
 
 
-def test_health(apiversion, conf, env):
+def test_health(api_version, conf, env):
     response = requests.get(conf.get(env, 'server_url') + "/health")
     router = conf.get(env, 'router')
     data = response.json()
@@ -9,19 +9,19 @@ def test_health(apiversion, conf, env):
     assert 'version' in data
     assert 'clients' in data
 
-    if apiversion != '0.0.0':
-        assert apiversion == data['version']
+    if api_version != '0.0.0':
+        assert api_version == data['version']
 
     assert data[router]['status'] == 'OK'
     assert data['storage']['status'] == 'OK'
 
 
-def test_status(apiversion, conf, env):
+def test_status(api_version, conf, env):
     response = requests.get(conf.get(env, 'server_url') + "/status")
     data = response.json()
     assert 'status' in data
     assert 'version' in data
     assert data['status'] == 'OK'
 
-    if apiversion != '0.0.0':
-        assert apiversion == data['version']
+    if api_version != '0.0.0':
+        assert api_version == data['version']
