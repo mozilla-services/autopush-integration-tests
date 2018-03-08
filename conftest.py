@@ -1,5 +1,4 @@
 import configparser
-import os
 import pytest
 import ssl
 import globals as gbl
