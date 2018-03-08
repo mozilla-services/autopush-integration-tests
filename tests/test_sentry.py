@@ -1,6 +1,9 @@
 import requests
 
+from pytest_testrail.plugin import pytestrail
 
+
+@pytestrail.case('C10692')
 def test_generate_logcheck_error(conf, env):
     response = requests.get(conf.get(env, 'server_url') + "/v1/err/crit")
     data = response.json()
