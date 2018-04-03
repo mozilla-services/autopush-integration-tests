@@ -5,4 +5,4 @@ requests==2.14.2
 flake8==3.3.0
 ipgetter
 six
-tox
+tox==3.0.0
