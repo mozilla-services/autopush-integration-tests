@@ -1,6 +1,0 @@
-{
-  "HOST": "autopush.stage.mozaws.net",
-  "HOST_UPDATES": "updates-autopush.stage.mozaws.net",
-  "ROUTER": "stage.autopush.routerv2",
-  "STORAGE": "stage.autopush.storage"
-}
