@@ -17,46 +17,38 @@ This repository contains integration tests used largely for deployment verificat
 
 Other tests / test tools used for testing autopush include:
 For API testing: [ap-loadtester](https://github.com/mozilla-service/ap-loadtester)
-For loadtesting (API testing at scale): [ardere](https://github.com/loads/ardere)
 
-
-autopush integration tests will live here.  For now, use bash scripts in /scripts for
-manual verification of push deployment
 
 
 Setup
 ---------
 
-* make install
+This repository uses [Pipenv](https://pipenv.readthedocs.io/en/latest/)
+to manage it's Python dependencies. Please follow the directions from Pipenv
+on how to install it.
+
+Once Pipenv is installed:
+
+* Use the command `pipenv install` to create a Python virtual environment and
+install the required dependencies
+* Once the virtual environment is created, use the command `pipenv shell`
+to use the virtual environment
+
 
 Run Tests
 ---------
 
-* make test
+To run the current set of tests, please use the following command:
 
-Docker
----------
+`pytest -v --env=<ENV> --api-version=<API_VERSION> tests/`
 
-If you want to run/deploy tests inside a docker container, you will need to have Docker installed locally.
-Then:
+* `<ENV>` is `stage`, `production`, or `dev` depending on what
+environment you are testing.
 
-* make docker-build
-* make docker-test
-
-Optionally, push a tag to DockerHub:
-
-* make docker-tag
-* make docker-push
-
-
-Jenkins
--------
-
-These tests can run on Jenkins as defined in [Jenkinsfile](Jenkinsfile).
-The tests are invoked by Jenkins with the parameterized command defined in this [run](run) file.
-The Jenkins pipeline job should be with the following syntax:  <project-name>.<test-type>.<test-environment>
-Example:  autopush.integration-tests.stage
-
+If you want the results of this testrun to be recorded to our TestRail
+instance, please check the output of `pytest -h` to get a list
+of the values that will need to be passed in as additional
+parameters.
 
 License
 -------
