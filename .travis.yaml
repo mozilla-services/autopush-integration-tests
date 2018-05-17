@@ -7,5 +7,5 @@ install:
 script:
   - tox
 notifications:
-email: rpappalax@gmail.com 
+email: chartjes@mozilla.com 
 
