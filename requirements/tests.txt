@@ -4,5 +4,5 @@ pytest-xdist==1.16.0
 requests==2.14.2
 flake8==3.5.0
 ipgetter
-six
+six==1.11.0
 tox
