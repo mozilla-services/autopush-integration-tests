@@ -40,7 +40,7 @@ Run Tests
 
 To run the current set of tests, please use the following command:
 
-`pytest -v --env=<ENV> --api-version=<API_VERSION> tests/`
+`pytest -v --env=<ENV> --api-version=<AUTOPUSH_API_VERSION> tests/`
 
 * `<ENV>` is `stage`, `production`, or `dev` depending on what
 environment you are testing.

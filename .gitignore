@@ -5,6 +5,7 @@
 *.idea
 .tox
 .env
+.pytest_cache
 __pycache__
 results/
 venv/
@@ -15,3 +16,5 @@ bin/
 include/
 lib/
 pip-selfcheck.json
+*.BAK
+*.log

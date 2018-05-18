@@ -1,8 +1,11 @@
 pytest==3.5.1
 pytest-variables==1.7.1
 pytest-xdist==1.22.2
+pytest-testrail==1.1.4
+pytest-timeout==1.2.1
 requests==2.18.4
 flake8==3.5.0
 ipgetter==0.7
+outlawg
 six==1.11.0
 tox==3.0.0
