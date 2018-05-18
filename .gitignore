@@ -10,3 +10,8 @@ results/
 venv/
 .DS_store
 ~tmp
+.Python
+bin/
+include/
+lib/
+pip-selfcheck.json
