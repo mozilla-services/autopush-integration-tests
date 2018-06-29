@@ -3,10 +3,10 @@ autopush integration tests
 
 Automated tests for the autopush server.
 
-[![license](https://img.shields.io/badge/license-MPL%202.0-blue.svg)](https://github.com/rpappalax/autopush-integration-tests/tree/master#license)
-[![travis](https://img.shields.io/travis/rpappalax/autopush-integration-tests.svg?label=travis)](http://travis-ci.org/rpappalax/autopush-integration-tests/)
-[![updates](https://pyup.io/repos/github/rpappalax/autopush-integration-tests/shield.svg)](https://pyup.io/repos/github/rpappalax/autopush-integration-tests)
-[![Python 3](https://pyup.io/repos/github/rpappalax/autopush-integration-tests/python-3-shield.svg)](https://pyup.io/repos/github/rpappalax/autopush-integration-tests/)
+[![license](https://img.shields.io/badge/license-MPL%202.0-blue.svg)](https://github.com/mozilla-services/autopush-integration-tests/tree/master#license)
+[![travis](https://img.shields.io/travis/mozilla-services/autopush-integration-tests.svg?label=travis)](http://travis-ci.org/mozilla-services/autopush-integration-tests/)
+[![updates](https://pyup.io/repos/github/mozilla-services/autopush-integration-tests/shield.svg)](https://pyup.io/repos/github/mozilla-services/autopush-integration-tests)
+[![Python 3](https://pyup.io/repos/github/mozilla-services/autopush-integration-tests/python-3-shield.svg)](https://pyup.io/repos/github/mozilla-services/autopush-integration-tests/)
 
 
 Summary
