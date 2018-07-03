@@ -1,0 +1,3 @@
+schedule: "every week on Monday"
+requirements:
+  - Pipfile
