@@ -1,6 +1,6 @@
 pytest==3.7.4
 pytest-variables==1.7.1
-pytest-xdist==1.22.2
+pytest-xdist==1.23.0
 requests==2.19.1
 flake8==3.5.0
 ipgetter==0.7
