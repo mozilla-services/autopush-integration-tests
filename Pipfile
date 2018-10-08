@@ -7,10 +7,10 @@ name = "pypi"
 
 [packages]
 
-pytest = "==3.0.7"
-requests = "==2.14.2"
-"flake8" = "==3.3.0"
-pytest-variables = "==1.6.1"
+pytest = "==3.8.2"
+requests = "==2.19.1"
+flake8 = "==3.5.0"
+pytest-variables = "==1.7.1"
 pytest-testrail = "*"
 configparser = "*"
 
