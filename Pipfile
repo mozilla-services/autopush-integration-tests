@@ -8,7 +8,7 @@ name = "pypi"
 [packages]
 
 pytest = "==3.10.0"
-requests = "==2.14.2"
+requests = "==2.20.0"
 flake8 = "==3.6.0"
 pytest-variables = "==1.6.1"
 pytest-testrail = "*"
