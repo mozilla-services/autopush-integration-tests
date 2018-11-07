@@ -145,10 +145,10 @@
         },
         "pytest-testrail": {
             "hashes": [
-                "sha256:214f1cd3a8f95ef55ab4a3b30b022a50741d0000a70ae4c0fcd23acd9546cd20"
+                "sha256:a9495252735dffcf4f9974c3ddf3499e7c0a98905ebd9bf228ed42d5bfb37d54"
             ],
             "index": "pypi",
-            "version": "==1.1.4"
+            "version": "==2.3.1"
         },
         "pytest-variables": {
             "hashes": [
