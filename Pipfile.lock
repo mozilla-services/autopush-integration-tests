@@ -46,10 +46,12 @@
         },
         "configparser": {
             "hashes": [
-                "sha256:5308b47021bc2340965c371f0f058cc6971a04502638d4244225c49d80db273a"
+                "sha256:325053090574fdf809545fd37a874ee791eabcacf4e421182be3c3d629e0b187",
+                "sha256:32c02ec32753d0aac4320b7e38447512797ac31a26f64b276cc0ffc49cb0fe65",
+                "sha256:5c7a4542b0e69eda3e87ac27f6bd50da1cd447eb886d04f4d402bc20035f2954"
             ],
             "index": "pypi",
-            "version": "==3.5.0"
+            "version": "==3.7.0"
         },
         "enum34": {
             "hashes": [
@@ -109,10 +111,10 @@
         },
         "pluggy": {
             "hashes": [
-                "sha256:447ba94990e8014ee25ec853339faf7b0fc8050cdc3289d4d71f7f410fb90095",
-                "sha256:bde19360a8ec4dfd8a20dcb811780a30998101f078fc7ded6162f0076f50508f"
+                "sha256:8ddc32f03971bfdf900a81961a48ccf2fb677cf7715108f85295c67405798616",
+                "sha256:980710797ff6a041e9a73a5787804f848996ecaa6f8a1b1e08224a5894f2074a"
             ],
-            "version": "==0.8.0"
+            "version": "==0.8.1"
         },
         "py": {
             "hashes": [
