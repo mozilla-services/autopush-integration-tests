@@ -1,17 +1,11 @@
 import configparser
 import pytest
 import ssl
-import globals as gbl
 
 
 # Hack because of how SSL certificates are verified by default in Python
 if hasattr(ssl, '_create_unverified_context'):
     ssl._create_default_https_context = ssl._create_unverified_context
-
-
-@pytest.fixture(scope='session')
-def rel_num():
-    gbl.release_num = ''
 
 
 def pytest_addoption(parser):
@@ -42,5 +36,5 @@ def api_version(request):
 @pytest.fixture()
 def conf():
     config = configparser.ConfigParser()
-    config.read('manifest.ini')
+    config.read(u'manifest.ini')
     return config
