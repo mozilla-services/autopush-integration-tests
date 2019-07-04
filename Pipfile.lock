@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "80a6e34681ed5f96d396129060139172f2cde82b179aba470f1cbd2ab722b8d2"
+            "sha256": "94d9d9597e66ce0425cf62fea2b1b0f2a57c9bab484d7f1b1c7077cc88040bd1"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -131,12 +131,19 @@
             "markers": "python_version <= '2.7'",
             "version": "==5.0.0"
         },
+        "packaging": {
+            "hashes": [
+                "sha256:0c98a5d0be38ed775798ece1b9727178c4469d9c3b4ada66e8e6b7849f8732af",
+                "sha256:9e1cbf8c12b1f1ce0bb5344b8d7ecf66a6f8a6e91bcb0c84593ed6d3ab5c4ab3"
+            ],
+            "version": "==19.0"
+        },
         "pathlib2": {
             "hashes": [
                 "sha256:2156525d6576d21c4dcaddfa427fae887ef89a7a9de5cbfe0728b3aafa78427e",
                 "sha256:446014523bb9be5c28128c4d2a10ad6bb60769e78bd85658fe44a450674e0ef8"
             ],
-            "markers": "python_version == '3.4.*' or python_version < '3'",
+            "markers": "python_version < '3.6'",
             "version": "==2.3.4"
         },
         "pluggy": {
@@ -167,13 +174,20 @@
             ],
             "version": "==2.1.1"
         },
+        "pyparsing": {
+            "hashes": [
+                "sha256:1873c03321fc118f4e9746baf201ff990ceb915f433f23b395f5580d1840cb2a",
+                "sha256:9b6323ef4ab914af344ba97510e966d64ba91055d6b9afa6b30799340e89cc03"
+            ],
+            "version": "==2.4.0"
+        },
         "pytest": {
             "hashes": [
-                "sha256:3773f4c235918987d51daf1db66d51c99fac654c81d6f2f709a046ab446d5e5d",
-                "sha256:b7802283b70ca24d7119b32915efa7c409982f59913c1a6c0640aacf118b95f5"
+                "sha256:6aa9bc2f6f6504d7949e9df2a756739ca06e58ffda19b5e53c725f7b03fb4aae",
+                "sha256:b77ae6f2d1a760760902a7676887b665c086f71e3461c64ed2a312afcedc00d6"
             ],
             "index": "pypi",
-            "version": "==4.4.1"
+            "version": "==4.6.4"
         },
         "pytest-testrail": {
             "hashes": [
@@ -254,6 +268,13 @@
                 "sha256:dbe59173209418ae49d485b87d1681aefa36252ee85884c31346debd19463232"
             ],
             "version": "==1.25.3"
+        },
+        "wcwidth": {
+            "hashes": [
+                "sha256:3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e",
+                "sha256:f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c"
+            ],
+            "version": "==0.1.7"
         },
         "zipp": {
             "hashes": [
