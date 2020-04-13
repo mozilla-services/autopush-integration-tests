@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "autopush-integration-tests"
+version = "2020.04.13"
+description = "Pytest scripts for testing Mozilla's push service"
+license = "MPL"
+authors = ["Chris Hartjes <chartjes@mozilla.com>"]
+readme = 'README.md'
+repository = "https://github.com/mozilla-services/autopush-integration-tests"
+
+[tool.poetry.dependencies]
+python = "~2.7"
+pytest = "==4.4.1"
+requests = ">=2.20.0"
+"flake8" = "==3.7.7"
+pytest-variables = "==1.7.1"
+pytest-testrail = "*"
+configparser = "*"
+
