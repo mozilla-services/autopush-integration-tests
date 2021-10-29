@@ -15,7 +15,7 @@ A variety of tests are used to verify the integrity of [Mozilla's autopush servi
 This repository contains integration tests used largely for deployment verification.
 
 Other tests / test tools used for testing autopush include:
-For API testing: [ap-loadtester](https://github.com/mozilla-service/ap-loadtester)
+For API testing: [ap-loadtester](https://github.com/mozilla-services/ap-loadtester)
 
 
 
